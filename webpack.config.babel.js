@@ -36,8 +36,6 @@ const options = {
   context: path.resolve(__dirname, 'src'),
   mode: process.env.NODE_ENV || 'production',
   entry: {
-    'popup/popup': './popup/popup.js',
-    'options/options': './options/options.js',
     'background/background': './background/background.js',
   },
   output: {
@@ -54,11 +52,6 @@ const options = {
       {
         test: new RegExp('.(' + fileExtensions.join('|') + ')$'),
         use: [{ loader: 'file-loader', options: { name: '[name].[ext]' } }],
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.html$/,
-        use: ['html-loader'],
         exclude: /node_modules/,
       },
     ],
@@ -83,23 +76,9 @@ const options = {
           )
         },
       },
+      { from: 'images/*' },
     ]),
     new MiniCssExtractPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'popup', 'popup.html'),
-      filename: 'popup/popup.html',
-      chunks: ['popup'],
-    }),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'options', 'options.html'),
-      filename: 'options/options.html',
-      chunks: ['options'],
-    }),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'background', 'background.html'),
-      filename: 'background/background.html',
-      chunks: ['background'],
-    }),
     new WriteFilePlugin(),
   ],
 }
