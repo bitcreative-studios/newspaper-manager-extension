@@ -5,6 +5,7 @@
     "scripts": ["background/background.js"],
     "persistent": false
   },
+  "permissions": ["storage"],
   "icons": {
     "128": "images/newspaper128x128.png"
   },

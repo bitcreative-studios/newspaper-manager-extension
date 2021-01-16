@@ -1831,6 +1831,11 @@ chrome-trace-event@^1.0.2:
   dependencies:
     tslib "^1.9.0"
 
+chrome-types@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/chrome-types/-/chrome-types-0.0.8.tgz#b313325b2f1b807c8a4f57e674600b2592a0f6fd"
+  integrity sha512-YY7Ex9/nqb9LzXs4sG8SYPCs3H3NebFHfciADMbU6BvzIBMhYkVfT6g8oXyDXB5WV5u6+5TgTydJ6J0bmDOVgQ==
+
 cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/cipher-base/-/cipher-base-1.0.4.tgz#8760e4ecc272f4c363532f926d874aae2c1397de"
