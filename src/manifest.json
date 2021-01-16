@@ -2,11 +2,23 @@
   "name": "Newspaper Manager",
   "version": "0",
   "background": {
-    "scripts": ["background/background.js"],
+    "scripts": ["background/background.bundle.js"],
     "persistent": false
   },
-  "permissions": ["storage"],
+  "page_action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "images/newspaper16x16.png",
+      "32": "images/newspaper32x32.png",
+      "48": "images/newspaper48x48.png",
+      "128": "images/newspaper128x128.png"
+    }
+  },
+  "permissions": ["storage", "declarativeContent"],
   "icons": {
+    "16": "images/newspaper16x16.png",
+    "32": "images/newspaper32x32.png",
+    "48": "images/newspaper48x48.png",
     "128": "images/newspaper128x128.png"
   },
   "manifest_version": 2,
