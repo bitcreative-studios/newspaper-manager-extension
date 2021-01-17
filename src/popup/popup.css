@@ -1,0 +1,49 @@
+@tailwind base;
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;400;600&display=swap');
+:root {
+  --toggle-width: 20px;
+  --toggle-height: 10px;
+  --knob-size: 8px;
+  --knob-offset: 5px;
+  --travel-distance-X: calc(
+    var(--toggle-width) - 2 * var(--knob-offset) - var(--knob-size)
+  );
+}
+
+body,
+html {
+  background: transparent !important;
+}
+@tailwind components;
+
+.toggle {
+  position: relative;
+  height: var(--toggle-height);
+  width: var(--toggle-width);
+  background-color: #cbf2fe;
+  border-radius: 50px;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+input[type='radio'] + label {
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  height: var(--knob-size);
+  width: var(--knob-size);
+  background-color: #fcfcfc;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(168, 203, 214, 0.954);
+  transition: all 500ms linear;
+}
+
+input[type='radio']:checked + label {
+  background-color: red;
+  transform: translate(calc(var(--travel-distance-X)), -50%);
+}
+@tailwind utilities;

@@ -37,6 +37,7 @@ const options = {
   mode: process.env.NODE_ENV || 'production',
   entry: {
     'background/background': './background/background.js',
+    'popup/popup': './popup/popup.js',
   },
   output: {
     path: path.join(__dirname, 'build'),
@@ -79,6 +80,11 @@ const options = {
       { from: 'images/*' },
     ]),
     new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src', 'popup', 'popup.html'),
+      filename: 'popup/popup.html',
+      chunks: ['popup/popup'],
+    }),
     new WriteFilePlugin(),
   ],
 }
