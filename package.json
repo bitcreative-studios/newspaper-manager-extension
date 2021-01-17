@@ -1,6 +1,6 @@
 {
   "name": "newspaper-manager-extension",
-  "version": "0.3.11",
+  "version": "0.3.12",
   "description": "Aide in the readability of Open online Newspaper.",
   "scripts": {
     "build": "webpack",
